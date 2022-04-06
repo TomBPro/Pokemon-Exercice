@@ -12,6 +12,7 @@ export default class Pokeball {
     }
 
     get getContenu(): Pokemon {
+        // TODO Return real Pokemon
         return new Salameche(50, 10);
     }
 

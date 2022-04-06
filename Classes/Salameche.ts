@@ -17,7 +17,11 @@ export default class Salameche extends TypeFeu implements Pokemon {
     }
 
     attaquer(): void {
-        console.log(this.nom + " attaque !");
+        if (!this.horsJeu) {
+            console.log(`${this.nom} attaque avec ${this.degats} de dégats`);
+        } else {
+            console.log(this.nom + ' est K.0 et ne peut plus attaquer');
+        }
     }
 
     renommer(): void {
