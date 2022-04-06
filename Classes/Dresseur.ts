@@ -12,12 +12,19 @@ export default class Dresseur {
         this.pokeballs = pokeballs;
     }
 
+    /**
+     * Ajoute des pokeballs au dresseur
+     */
     ajouterPokeballs() {
         new Pokeball(this, new Salameche(80, 20));
         new Pokeball(this, new Carapuce(80, 20));
         console.log(`${this.nom} ajoute des pokeballs`);
     }
 
+    /**
+     * Permet de capturer un pokemon
+     * @param pokemon le pokemon à capturer
+     */
     capturer(pokemon: Pokemon) {
         if (this.pokeballs === undefined) {
             this.pokeballs = [];
@@ -32,6 +39,9 @@ export default class Dresseur {
         }
     }
 
+    /**
+     * Obtiens les pokemons d'un dresseur
+     */
     getPokemons() {
         if (this.pokeballs === undefined) {
             this.pokeballs = [];
