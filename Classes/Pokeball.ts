@@ -3,20 +3,26 @@ import Dresseur from "./Dresseur";
 import Salameche from "./Salameche";
 
 export default class Pokeball {
+    proprietaire: Dresseur;
     contient?: Pokemon;
-    proprietaire?: Dresseur;
 
-    constructor(contient?: Pokemon, proprietaire?: Dresseur) {
-        this.contient = contient;
+    constructor(proprietaire: Dresseur, contient?: Pokemon) {
         this.proprietaire = proprietaire;
+        this.contient = contient;
     }
 
-    get getContenu(): Pokemon {
-        // TODO Return real Pokemon
-        return new Salameche(50, 10);
+    get getContenu(): Pokemon | undefined {
+        if (this.contient !== undefined) {
+            return this.contient;
+        } else {
+            return;
+            console.log('La pokeball est vide');
+        }
     }
 
     set affecterPokemon(pokemon: Pokemon) {
-        this.contient = pokemon;
+        if (this.contient === undefined) {
+            this.contient = pokemon;
+        }
     }
 }

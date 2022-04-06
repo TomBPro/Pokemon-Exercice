@@ -37,12 +37,16 @@ export default class Carapuce extends TypeEau implements Pokemon {
     }
 
     soigner(): void {
-        if (this.pv+20 <= this.pvMax) {
-            this.pv += 20;
+        if (this.pv = this.pvMax) {
+            console.log('Le pokemon est déjà au maximum de ses pv');
         } else {
-            this.pv = this.pvMax;
+            if (this.pv+20 <= this.pvMax) {
+                this.pv += 20;
+            } else {
+                this.pv = this.pvMax;
+            }
+            console.log('Le pokémon a été soigné !');
         }
-        console.log(this.nom + " a été soigné !");
     }
 
     subirAttaque(): void {
